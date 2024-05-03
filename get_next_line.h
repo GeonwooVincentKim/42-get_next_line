@@ -6,7 +6,7 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:19:30 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/03 20:16:33 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:50:01 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 
 // get_next_line.c
 char	*get_next_line(int fd);
+size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size);
+void	*ft_memset(void *ptr, int x, size_t n);
 
 // get_next_line_utils.c
 char	*ft_strchr(const char *str, int c);

@@ -6,7 +6,7 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:01:11 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/03 20:17:27 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:49:50 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,33 @@ static void	read_from_file(int fd, char *buffer_cup, char **str)
 	free(buffer_cup);
 }
 
+// Get a line from a buffer or string, such as might 
+// be used in reading lines from a file one at a time
+static char	*get_next_line_process(char **str)
+{
+	int		i;
+	int		j;
+	char	*ret;
+	char	*tmp;
+
+	if (!*str)
+		return (0);
+	if (!ft_strchr(*str, '\n'))
+	{
+		ret = ft_substr(*str, 0, ft_strlen(*str));
+		free(*str);
+		*str = 0;
+		return (ret);
+	}
+	i = ft_strlen(*str);
+	j = ft_strlen(ft_strchr(*str, '\n'));
+	ret = ft_substr(*str, 0, i - j + 1);
+	tmp = *str;
+	*str = ft_substr(ft_strchr(*str, '\n'), 1, j - 1);
+	free(tmp);
+	return (ret);
+}
+
 // Get the next line from the file descriptor
 // basin = たらい
 char	*get_next_line(int fd)
@@ -56,16 +83,36 @@ char	*get_next_line(int fd)
 		return (0);
 	}
 	read_from_file(fd, basin_buffer, &str);
-	return (get_next_process(&str));
+	return (get_next_line_process(&str));
 }
 
-// Convert and print the newline character as ?
-void	print_newline_helper(char *buffer)
+// There was no area I can write down the code
+// So I move this function to the get_next_line.c
+size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size)
 {
-	while (*buffer && *buffer != '\0')
+	size_t	i;
+
+	i = 0;
+	if (dest_size)
 	{
-		if (*buffer == '\n')
-			*buffer = '\\';
-		buffer++;
+		while (src[i] != '\0' && i < (dest_size - 1))
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
+	return (ft_strlen(src));
+}
+
+void	*ft_memset(void *ptr, int x, size_t n)
+{
+	unsigned char	*p;
+	size_t			len_size;
+
+	p = (unsigned char *) ptr;
+	len_size = 0;
+	while (len_size < n)
+		p[len_size++] = x;
+	return (ptr);
 }
