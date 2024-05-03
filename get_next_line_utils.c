@@ -1,27 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 19:01:11 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/03 14:59:46 by geonwkim         ###   ########.fr       */
+/*   Created: 2024/05/02 13:27:03 by geonwkim          #+#    #+#             */
+/*   Updated: 2024/05/02 13:27:06 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 
-char	*get_next_line(int fd)
-{
-	int		read_bytes;
-	char	*buffer_cup;
-
-	buffer_cup = malloc(3 + 1 * sizeof(char));
-	if (!buffer_cup)
-		return (NULL);
-	read_bytes = read(fd, buffer_cup, 3);
-	if (read_bytes <= 0)
-		return (NULL);
-	return (buffer_cup);
-}
