@@ -6,7 +6,7 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:01:11 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/03 18:47:40 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:50:46 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static char	*read_from_file(int fd)
 	static int	count;	
 
 	count = 1;
-	printf("ft_calloc#[%d]---", count++);
+	// printf("ft_calloc#[%d]---", count++);
 	buffer_cup = ft_calloc(3 + 1, sizeof(char));
 	if (!buffer_cup)
 		return (NULL);
@@ -47,7 +47,7 @@ void	print_newline_helper(char *buffer)
 	{
 		if (*buffer == '\n')
 			*buffer = '\\';
-		printf("%c", *buffer);
+		// printf("%c", *buffer);
 		buffer++;
 	}
 }
