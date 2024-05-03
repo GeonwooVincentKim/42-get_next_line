@@ -6,7 +6,7 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:19:30 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/03 16:11:03 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:49:54 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include	<unistd.h>
 # include	<stdio.h>
 # include	<stdlib.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 3
+# endif
 
 // get_next_line.c
 char	*get_next_line(int fd);
