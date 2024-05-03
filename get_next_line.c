@@ -6,7 +6,7 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:01:11 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/03 20:49:50 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/04 00:10:01 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,33 +86,3 @@ char	*get_next_line(int fd)
 	return (get_next_line_process(&str));
 }
 
-// There was no area I can write down the code
-// So I move this function to the get_next_line.c
-size_t	ft_strlcpy(char *dest, const char *src, size_t dest_size)
-{
-	size_t	i;
-
-	i = 0;
-	if (dest_size)
-	{
-		while (src[i] != '\0' && i < (dest_size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-	}
-	return (ft_strlen(src));
-}
-
-void	*ft_memset(void *ptr, int x, size_t n)
-{
-	unsigned char	*p;
-	size_t			len_size;
-
-	p = (unsigned char *) ptr;
-	len_size = 0;
-	while (len_size < n)
-		p[len_size++] = x;
-	return (ptr);
-}
