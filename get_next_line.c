@@ -6,7 +6,7 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:01:11 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/03 14:59:46 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:09:50 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 char	*get_next_line(int fd)
 {
-	int		read_bytes;
-	char	*buffer_cup;
+	int			read_bytes;
+	char		*buffer_cup;
+	static int	count;	
 
-	buffer_cup = malloc(3 + 1 * sizeof(char));
+	count = 1;
+	printf("ft_calloc#[%d]---", count++);
+	buffer_cup = ft_calloc(3 + 1 * sizeof(char));
 	if (!buffer_cup)
 		return (NULL);
 	read_bytes = read(fd, buffer_cup, 3);
