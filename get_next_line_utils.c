@@ -6,41 +6,66 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 13:27:03 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/03 16:25:02 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:17:17 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"get_next_line.h"
 
-void	*ft_calloc(size_t n_items, size_t size)
+char	*ft_strchr(const char *str, int c)
 {
-	void	*p;
-	size_t	size_bytes;
-
-	if (n_items == 0 || size == 0)
+	while (*str != '\0')
 	{
-		n_items = 1;
-		size = 1;
+		if (*str == (char)c)
+			return ((char *)str);
+		str++;
 	}
-	if (n_items > SIZE_MAX / size)
-		return (NULL);
-	size_bytes = n_items * size;
-	p = malloc(size_bytes);
-	if (p != NULL)
-		ft_memset(p, 0, size_bytes);
-	if (p == NULL)
-		return (NULL);
-	return (p);
+	if (c == '\0')
+		return ((char *) str);
+	return (NULL);
 }
 
-void	*ft_memset(void *ptr, int x, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned char	*p;
-	size_t			len_size;
+	char	*newarray;
+	size_t	len;
 
-	p = (unsigned char *) ptr;
-	len_size = 0;
-	while (len_size < n)
-		p[len_size++] = x;
-	return (ptr);
+	if (!s1 || !s2)
+		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	newarray = (char *)malloc(sizeof(char) * (len + 1));
+	if (!newarray)
+		return (NULL);
+	ft_strlcpy(newarray, s1, len + 1);
+	ft_strlcat(newarray, s2, len + 1);
+	return (newarray);
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_substr(char const *str, unsigned int start, size_t len)
+{
+	char	*newarray;
+	size_t	len_s;
+
+	if (!str)
+		return (NULL);
+	len_s = ft_strlen(str);
+	if (len_s < start || len == 0)
+		return (newarray = ft_calloc(1, 1));
+	else if (len_s - start < len)
+		len = len_s - start;
+	newarray = (char *)malloc((len + 1));
+	if (!newarray)
+		return (NULL);
+	ft_strlcpy(newarray, str + start, len + 1);
+	return (newarray);
 }

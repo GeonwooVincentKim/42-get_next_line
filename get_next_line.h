@@ -6,7 +6,7 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:19:30 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/03 16:49:54 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:16:33 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,16 @@
 # include	<stdlib.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 3
+#  define BUFFER_SIZE 42
 # endif
 
 // get_next_line.c
 char	*get_next_line(int fd);
 
 // get_next_line_utils.c
-void	*ft_calloc(size_t n_items, size_t size);
-void	*ft_memset(void *ptr, int x, size_t n);
+char	*ft_strchr(const char *str, int c);
+char	*ft_substr(const char *str, unsigned int start, size_t len);
+size_t	ft_strlen(const char *str);
+char	*ft_strjoin(const char *s1, const char *s2);
 
 #endif
