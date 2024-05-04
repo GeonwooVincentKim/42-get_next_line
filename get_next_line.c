@@ -6,7 +6,7 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:01:11 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/04 00:10:01 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/04 22:43:43 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,3 @@ char	*get_next_line(int fd)
 	read_from_file(fd, basin_buffer, &str);
 	return (get_next_line_process(&str));
 }
-

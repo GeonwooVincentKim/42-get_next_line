@@ -6,7 +6,7 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 13:27:03 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/04 00:02:59 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/04 22:21:11 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,23 +73,7 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	return (newarray);
 }
 
-// static void	*ft_calloc(size_t n_items, size_t size)
-// {
-// 	void	*p;
-// 	size_t	size_bytes;
-
-// 	if (n_items == 0 || size == 0)
-// 	{
-// 		n_items = 1;
-// 		size = 1;
-// 	}
-// 	if (n_items > SIZE_MAX / size)
-// 		return (NULL);
-// 	size_bytes = n_items * size;
-// 	p = malloc(size_bytes);
-// 	if (p != NULL)
-// 		ft_memset(p, 0, size_bytes);
-// 	if (p == NULL)
-// 		return (NULL);
-// 	return (p);
-// }
+char	*ft_strdup(const char *s)
+{
+	return (ft_substr(s, 0, ft_strlen(s)));
+}
