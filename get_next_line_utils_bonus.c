@@ -6,7 +6,7 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 17:40:10 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/05 17:40:16 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/05 23:01:06 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 char	*ft_strchr(const char *str, int c)
 {
+	if (!str)
+		return (NULL);
 	while (*str != '\0')
 	{
 		if (*str == (char)c)
