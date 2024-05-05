@@ -6,13 +6,13 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:01:11 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/05 16:02:51 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/05 16:04:19 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	buf_free(char **buf)
+static void	buf_free(char **buf)
 {
 	if (*buf != NULL)
 	{
@@ -23,7 +23,7 @@ void	buf_free(char **buf)
 
 // Get a line from a buffer or string, such as might 
 // be used in reading lines from a file one at a time
-char	*get_next_line_process(int num_of_line, char **buffer)
+static char	*get_next_line_process(int num_of_line, char **buffer)
 {
 	char	*result;
 	char	*str_tmp;
