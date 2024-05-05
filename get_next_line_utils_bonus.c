@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 13:27:03 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/05 17:39:58 by geonwkim         ###   ########.fr       */
+/*   Created: 2024/05/05 17:40:10 by geonwkim          #+#    #+#             */
+/*   Updated: 2024/05/05 17:40:16 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"get_next_line.h"
+#include	"get_next_line_bonus.h"
 
 char	*ft_strchr(const char *str, int c)
 {
