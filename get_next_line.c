@@ -6,7 +6,7 @@
 /*   By: geonwkim <geonwkim@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 19:01:11 by geonwkim          #+#    #+#             */
-/*   Updated: 2024/05/05 16:04:19 by geonwkim         ###   ########.fr       */
+/*   Updated: 2024/05/05 16:14:11 by geonwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static char	*get_next_line_process(int num_of_line, char **buffer)
 // **buffer -> Store the dynamically allocated to buffer
 // *read_return -> A temporary buffer, store the charactes 
 // read from the flides in each iteration
-static char	read_from_file(int flides, char **buffer, char *read_buffer)
+static char	*read_from_file(int flides, char **buffer, char *read_buffer)
 {
 	ssize_t	count_bytes;
 	char	*str_tmp;
